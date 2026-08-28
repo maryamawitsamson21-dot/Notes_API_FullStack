@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Note Book</title>
+         <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/hopstarter/book/48/Book-Blank-Book-icon.png">
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+ <img class="logo-img" src="https://icons.iconarchive.com/icons/hopstarter/book/48/Book-Blank-Book-icon.png" alt="Logo">
+            </div>
+            
+    
+            <div class="nav">
+
+         <ul>
+            
+
+           <li><a href="#">Home Page</a></li>
+            <li><a href="/notes/get">My Notes</a></li>
+           <li><a href="#">About</a></li>
+             <li><a href="#">Contact Us</a></li>
+
+            </ul>
+            </div>
+           
+         
+        </nav>
+        <h1>Smart Notes. Anywhere.</h1>
+        
+        <p>Create, update, and manage your thoughts securely from any device</p>
+        <div class="btn-div">
+<button class="btn" type="button">Register</button>
+        <button class="btn-log" type="button">Log in</button>
+        </div>
+        
+    </body>
+        <footer>
+        <div class="footer-content">
+            <p class="footer-text">© 2026 Note Book. Secured with JWT.</p>
+            
+        </div>
+    </footer>
+
+</html>
+   
+
+
+<style>
+  body{
+    /*line-height:2; */
+     font-size: 1.2rem; 
+    align-items: center;
+    font-family: sans-serif;
+    margin: 40px;
+    background-color:#030d2c;
+    color:#65c0d0;
+        display: flex;                /* Turns body into a flexbox layout */
+    flex-direction: column;       /* Stacks navbar, text, and buttons vertically */
+    align-items: center;          /* Centers everything horizontally */
+    justify-content: center;      /* Centers everything vertically */
+    min-height: 100vh;            /* Forces body to fill the entire screen height */
+    text-align: center;           /* Centers text lines inside h1 and p tags */
+    padding: 20px;
+    box-sizing: border-box;
+    
+  }
+  .footer-content{
+   position: absolute;
+    bottom: 0; 
+    left: 0;
+     width: 100%; 
+  }
+   .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  p{
+    margin-bottom: 30px;
+  }
+  nav{
+    position: absolute;           /* Pins navbar to the top edge */
+    top: 0;
+    left: 0;                      /* Pushes container wall to the far left */
+    width: 100%;                  /* Ensures it covers 100% of screen width */
+    box-sizing: border-box; 
+      display: flex;                 /* Turns navbar into a row */
+    justify-content: space-between; 
+         /* Keeps paddings from overflowing screen borders */
+  }
+  .btn, .btn-log{
+     font-size: 1.0rem; 
+    background-color:#38497c;
+    color:#65c0d0;
+    padding:15px;
+    border-radius: 10px;
+    box-shadow: #65c0d0 rgb(0, 0, 0);
+    outline-color: white;
+   
+  }
+.btn-div{
+     display: flex;
+ gap:20px;
+}
+ ul {
+    display: flex;       /* 1. Aligns list items side-by-side */
+    list-style: none;    /* 2. Removes the vertical bullet points */
+   justify-content: flex-end;           /* 3. Adds uniform horizontal spacing between links */
+    gap:30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+   
+ }
+ ul li a{
+ text-decoration: none;
+    color:  #65c0d0;
+ }
+
+</style>
+<script>
+const register=document.querySelector(".btn")
+const login=document.querySelector(".btn-log")
+register.addEventListener("click",(e)=>{
+    e.preventDefault();
+    window.location.href="/notes/auth?mode=register"
+    console.log("Register button clicked successfully!");
+})
+login.addEventListener("click",()=>{
+    window.location.href="/notes/auth"
+})
+
+</script>

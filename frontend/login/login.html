@@ -1,0 +1,240 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+     <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/hopstarter/book/48/Book-Blank-Book-icon.png">
+</head>
+<body>
+
+    <!-- 🎴 WIDESCREEN CENTERED CONTENT CARD -->
+    <div class="login-card">
+        <h3>Login</h3>
+        
+        <!-- 🔒 FIX 1: Form now wraps everything correctly from start to finish -->
+        <form action="" method="POST">
+            <div class="input-group">
+                <div class="name"><input type="text" placeholder="Full Name"></div>
+                <div><input type="email" placeholder="Email"></div>
+                <div class="password"><input type="password" placeholder="Password">
+                    <div class="toggle">
+                 <span class="open">👁️</span>
+                 <span class="closed">🙈</span></div>
+                
+                 </div>
+            </div>
+            
+            <div class="remember-and-forgot">
+                <label>
+                    <input type="checkbox"> Remember Me
+                </label>
+                <a href="#">Forgot Password</a>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- 🏁 ABSOLUTE FOOTER LINK PINNED TO THE GROUND -->
+    <div class="link">
+        Don't have an account? <a href="#">Register</a>
+    </div>
+     <div class="link-log">
+       Already have an account? <a href="#">Log in</a>
+    </div>
+
+</body>
+</html>
+
+<style>
+    /* 🌍 FULL SCREEN RESETS & CENTERING ENGINE */
+    body {
+        margin: 0;
+        font-family: sans-serif;
+        background-image: url("./dark_blue_gradient_background.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #65c0d0;
+        
+        display: flex;               
+        flex-direction: column;       
+        align-items: center;          /* 🌟 Keeps the card locked dead-center horizontally */
+        justify-content: center;      /* 🌟 Keeps the card locked dead-center vertically */
+        min-height: 100vh;            
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;           /* Required anchor wall for your absolute footer */
+    }
+
+    /* 🎴 THE WIDESCREEN GLASS CARD CONTAINER */
+    .login-card {
+        background-color: rgba(3, 13, 44, 0.55); 
+        backdrop-filter: blur(10px);              
+        padding: 45px 50px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);  
+        
+        /* 🌟 HERE IS YOUR WIDE LOOK THAT STAYS IN THE CENTER */
+        width: 100%;
+        max-width: 500px;             /* Stretches the card wide without shifting left */
+        
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 2.2rem;
+        margin-top: 0;
+        margin-bottom: 35px;
+        letter-spacing: -0.5px;
+    }
+
+    /* 📝 SPACIOUS INPUT FIELDS */
+    .input-group div {
+        margin-bottom: 22px;
+    }
+
+    input[type="email"],
+    input[type="password"],    input[type="text"] {
+        width: 100%;
+        padding: 15px 18px;           /* Taller, wider internal typing spaces */
+        border-radius: 10px;
+        border: 1px solid #38497c;
+        background-color: #030d2c;
+        color: white;
+        box-sizing: border-box;
+        font-size: 1.05rem;
+        outline: none;
+    }
+    .name{
+        display: none;
+    }
+    .password{
+        position: relative;
+        width: 100%;
+    }
+    .toggle{
+        position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%); /* Centers it vertically perfectly */
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 10; 
+    }
+    input[type="password"] {
+    padding-right: 45px !important;
+}
+.closed{
+    display: none;
+}
+
+   
+    /* 🔗 REMEMBER AND FORGOT ROW ALIGNMENTS */
+    .remember-and-forgot {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        font-size: 0.85rem; 
+        margin-bottom: 35px;
+    }
+
+    /* Target the link directly inside the row to fix text-decoration */
+    .remember-and-forgot a {
+        text-decoration: none;          /* Underline text removal completely working */
+        color: #65c0d0;
+        font-weight: bold;
+    }
+
+    .remember-and-forgot a:hover {
+        color: white;
+    }
+
+    /* 🔘 STRONG ACTION SUBMIT BUTTON */
+    button {
+        width: 100%;                    
+        font-size: 1.15rem; 
+        background-color: #38497c;
+        color: #65c0d0;
+        padding: 16px;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+        transition: all 0.2s ease;
+    }
+
+    button:hover {
+        background-color: #4a5d96;
+        color: white;
+    }
+
+    /* 🏁 ABSOLUTE FOOTER LINK AT THE BOTTOM WALL */
+    .link , .link-log{
+        position: absolute;           
+        bottom: 30px;                 /* Clean breathing space away from the bottom rim */
+        left: 0;
+        width: 100%;
+        text-align: center;           /* Centers text link horizontally line-by-line */
+        color: #438f9d;
+        font-size: 0.9rem; 
+    }
+    .link-log{
+        display: none;
+    }
+
+    /* Target the register anchor link directly to remove underline */
+    .link a {
+        text-decoration: none;        /* Underline text removal completely working */
+        color: #65c0d0;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+
+    .link a:hover {
+        color: white;
+    }
+</style>
+<script>
+    // JavaScript to toggle between login and register forms
+const register=document.querySelector(".link a");
+const login=document.querySelector(".link-log a");
+const open=document.querySelector(".open");
+const closed=document.querySelector(".closed");
+register.addEventListener("click",function(e){
+    e.preventDefault();
+    document.querySelector(".link-log").style.display = "block";
+    document.querySelector(".link").style.display = "none";
+    document.querySelector(".name").style.display = "block";
+    document.querySelector("h3").textContent = "Register";
+    document.querySelector(".remember-and-forgot").style.display = "none";
+    document.querySelector("button").textContent = "Register";
+})
+login.addEventListener("click",function(e){
+    e.preventDefault();
+    document.querySelector(".link-log").style.display = "none";
+    document.querySelector(".link").style.display = "block";
+    document.querySelector(".name").style.display = "none";
+    document.querySelector("h3").textContent = "Login";
+        document.querySelector(".remember-and-forgot").style.display = "flex";
+         document.querySelector("button").textContent = "Login";
+})
+closed.addEventListener("click",function(e){
+    e.preventDefault();
+    document.querySelector(".password input").type="password";
+    document.querySelector(".open").style.display = "block";
+    document.querySelector(".closed").style.display = "none";
+
+})
+open.addEventListener("click",function(e){
+    e.preventDefault();
+    document.querySelector(".password input").type="text";
+    
+    document.querySelector(".open").style.display = "none";
+    document.querySelector(".closed").style.display = "block";
+
+})
+</script>
