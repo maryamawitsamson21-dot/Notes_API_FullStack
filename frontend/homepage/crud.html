@@ -45,7 +45,7 @@
     }
 
     function fetchNotes() {
-        secureFetch('http://localhost:3000/notes/get/')
+        secureFetch('https://notes-app-backend-szjm.onrender.com/notes/get/')
             .then(response => response.json())
             .then(data => {
                 const noteList = document.querySelector('.note-list');
@@ -72,7 +72,7 @@
         
         deleteBtn.addEventListener('click', async () => {
             try {
-                const response = await secureFetch(`http://localhost:3000/notes/delete/`, {
+                const response = await secureFetch(`https://notes-app-backend-szjm.onrender.com/notes/delete/`, {
                     method: 'DELETE',
                     body: JSON.stringify({ _id: note._id }), // Sends the Note ID to req.body.id matching backend
                 });
@@ -115,7 +115,7 @@
         }
 
         try {
-            const data = await secureFetch('http://localhost:3000/notes/create/', {
+            const data = await secureFetch('https://notes-app-backend-szjm.onrender.com/notes/create/', {
                 method: 'POST',
                 body: JSON.stringify({ title, content }),       
             });  
