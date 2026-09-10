@@ -1,6 +1,6 @@
 const user = require("../model/user.model")
 const bcrypt=require("bcryptjs")
-const jwt=require("jsonwebtoken")
+
 
 const register=async (req,res)=>{
 
@@ -17,11 +17,11 @@ const salt=await bcrypt.genSalt(10)
 const hasedPassword=await bcrypt.hash(password,salt)
 
      const data=await user.create({fullname,email,password:hasedPassword})
-    const token= jwt.sign({fullname,id:data._id,email},process.env.JWT_SECRET_KEY,{expiresIn:"15d"})
+    
 res.status(201).json({
     success:true,
 
-    token
+  
 
 })
 
