@@ -52,18 +52,13 @@ const crypt=await bcrypt.compare(password,emailInDataBase.password)
 if(!crypt){
      return res.status(401).send("there is not found email or password in the database. Try again ...")
 }
-     const token = jwt.sign(
-        { fullname: emailInDataBase.fullname, id: emailInDataBase._id, email: emailInDataBase.email },
-            
-            process.env.JWT_SECRET_KEY, 
-            { expiresIn: "15d" }
-        )
+    
  return res.status(200).json({
     success:true,
     id: emailInDataBase._id,
     message: "You login successfully.",
     emailInDataBase:emailInDataBase.email,
-    token
+   
  })
  
    }
