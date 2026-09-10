@@ -1,11 +1,6 @@
 const mongoose=require("mongoose")
 const taskSchema=new mongoose.Schema({
-    id:{
-        type:Number,
-        unique:true,
-        required:true,
-      
-    },
+
     user:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"user",
@@ -14,12 +9,12 @@ const taskSchema=new mongoose.Schema({
     title:{
           type:String,
       
-        required:true,
+        required:[true,"Title is required"],
 
     },
     content:{
           type:String,
-           required:true,
+           required:[true,"Content is required"],
        
     },
  

@@ -7,11 +7,11 @@ const register=async (req,res)=>{
     try{
 const{email,password,fullname}=req.body
 if(!email||!password||!fullname){
-    return res.status(400).send("You have to be insert Full Name ,Email and Password. Try again ...")
+    return res.status(400).json({success:false,message:"Please provide email, password and fullname. Try again ..."})               
 }
 const isFound=await user.findOne({email})
 if(isFound){
-return res.status(400).send("there is already found. Try again ...")
+return res.status(400).json({success:false,message:"This email is already registered. Please log in."})
 }
 const salt=await bcrypt.genSalt(10)
 const hasedPassword=await bcrypt.hash(password,salt)
@@ -20,7 +20,7 @@ const hasedPassword=await bcrypt.hash(password,salt)
     const token= jwt.sign({fullname,id:data._id,email},process.env.JWT_SECRET_KEY,{expiresIn:"15d"})
 res.status(201).json({
     success:true,
-    data,
+
     token
 
 })
@@ -28,7 +28,8 @@ res.status(201).json({
 
 
     }catch(error){
-        return res.status(500).send("Server error.")
+        console.log(error)
+        return res.status(500).json({success:false,message:`there is an error in controller ${error}`} )
     }
 
 }
@@ -39,13 +40,13 @@ const login=async (req,res)=>{
 
      const{email,password}=req.body
 if(!email||!password){
-    return res.status(400).send("You have to be insert email and password. Try again ...")
+    return res.status(400).json({success:false,message:"Please provide email and password. Try again ..."})
 }
  
 
 const emailInDataBase=await user.findOne({email})
 if(!emailInDataBase){
-    return res.status(401).send("there is not found email or password in the database. Try again ...")
+    return res.status(401).json({success:false,message:"there is not found email or password in the database. Try again ..."})
 }
 const crypt=await bcrypt.compare(password,emailInDataBase.password)
 if(!crypt){
@@ -67,8 +68,7 @@ if(!crypt){
  
    }
    catch(error){
-    return res.status(500).send("Server error.")
-   }
+    return res.status(500).json({success:false,message:`there is an error in controller ${error}`})} 
 
 }
-module.exports={register,login}
+module.exports={register,login}     

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App - Full-Stack Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 🎨 Clean, modern top navigation styles */
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .dashboard-nav {
+background-image: url("./dark_blue_gradient_background.jpg");
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            color: #1e293b;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .dashboard-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .nav-link:hover {
+            color: #2563eb;
+            background-color: #f1f5f9;
+        }
+
+        /* Styling specifically to make the Add Post link stand out like a subtle action button */
+        .nav-link-btn {
+            background-color: #2563eb;
+            color: #ffffff !important;
+        }
+
+        .nav-link-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        .app-header {
+            max-width: 1200px;
+            margin: 40px auto 20px auto;
+            padding: 0 20px;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <!-- 🌐 TOP NAVIGATION BAR -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <a href="./homepage/index.html" class="nav-logo">📒 NoteBook</a>
+            <ul>
+                <li><a href="./homepage/index.html" class="nav-link">Home Page</a></li>
+                <li><a href="./homepage/crud.html" id="addPostLink" class="nav-link nav-link-btn">➕ Add Post</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Application Header Section Below Nav -->
+    <header class="app-header">
+        <h1>My Notes Dashboard</h1>
+        <p>Connected to Full-Stack API</p>
+    </header>
+
+    <main>
+        <p>This Notes Application is a full-stack web project designed for efficient personal task tracking and documentation. It functions as a single-page interface powered by a backend web service, enabling instant data persistence.</p>
+        
+        <!-- Target container element for creating posts -->
+        <section id="add-post-section">
+            <!-- Form content will inject or live here -->
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+

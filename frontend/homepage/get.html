@@ -1,55 +1,26 @@
 <!DOCTYPE html>
-
-    <html lang="en">
+<html lang="en">  
     <head>
         <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Note Book</title>
-         <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/hopstarter/book/48/Book-Blank-Book-icon.png">
+         <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/hopstarter/book/48/Book-Blank-Book-icon.png">               
     </head>
     <body>
-        <nav>
-            <div class="logo">
- <img class="logo-img" src="https://icons.iconarchive.com/icons/hopstarter/book/48/Book-Blank-Book-icon.png" alt="Logo">
-            </div>
-            
-    
-            <div class="nav">
+            <div id="post" class="app-container">
+        <!-- Sidebar with note list -->
+        <aside class="sidebar">
+            <h2>My Notes</h2>
+            <button class="new-note-btn" type="submit">+ New Note</button>
+            <ul class="note-list">
+                <li class="note-item" >
 
-         <ul>
-            
-
-           <li><a href="#homepage">Home Page</a></li>
-           
-           <li><a href="../about.html">About</a></li>
-           
-
+                </li>
+                <!-- Notes will be dynamically added here -->
             </ul>
+        </aside>
             </div>
-           
-         
-        </nav>
-        <h1 id="homepage" >Smart Notes. Anywhere.</h1>
-        
-        <p >Create, update, and manage your thoughts securely from any device</p>
-        <div class="btn-div">
-            <a href="../login/login.html?mode=register"><button class="btn" type="button">Register</button></a>
-            <a href="../login/login.html"><button class="btn-log" type="button">Log in</button></a>
-
-        </div>
-
-        
-    </body>
-        <footer>
-        <div class="footer-content">
-            <p class="footer-text">© 2026 Note Book. Secured with JWT.</p>
             
-        </div>
-    </footer>
-
-</html>
-   
-
 
 <style>
   body{
@@ -124,9 +95,5 @@
  }
 
 </style>
-<script>
-const register=document.querySelector(".btn")
-const login=document.querySelector(".btn-log")
-
-
-</script>
+    </body>
+</html>                                                     

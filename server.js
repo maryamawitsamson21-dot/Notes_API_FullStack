@@ -1,6 +1,6 @@
 const dns=require("dns")
 dns.setServers(["8.8.8.8"])
-
+const cors=require("cors")
 require("dotenv").config()
 const express=require("express");
 const path=require("path");
@@ -12,7 +12,7 @@ const deleteRouter=require('./router/delete.router.js')
 const autherization=require("./router/authentication.router.js")
 const auth=require("./middlewares/auth.middleware.js")
 const app=express()
-
+app.use(cors())
 app.use(express.json())
 app.use("/notes",express.static(path.join(__dirname,"frontend/homepage")))
 app.get("/notes/auth", (req, res) => {
@@ -20,9 +20,9 @@ app.get("/notes/auth", (req, res) => {
 })
 
 app.use("/notes/get",getRouter)
-app.use("/notes/create",auth,createRouter)
-app.use("/notes/update",auth,updateRouter)
-app.use("/notes/delete",auth,deleteRouter)
+app.use("/notes/create",createRouter)
+app.use("/notes/update",updateRouter)
+app.use("/notes/delete",deleteRouter)
 app.use("/notes/auth",autherization)
 
 
