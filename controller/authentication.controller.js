@@ -50,7 +50,7 @@ if(!emailInDataBase){
 }
 const crypt=await bcrypt.compare(password,emailInDataBase.password)
 if(!crypt){
-     return res.status(401).send("there is not found email or password in the database. Try again ...")
+     return res.status(401).json({success:false,message:"there is not found email or password in the database. Try again ..."})
 }
     
  return res.status(200).json({
