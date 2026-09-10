@@ -263,7 +263,7 @@ loginForm.addEventListener("submit",async function(e) {
 async function loginUser() {
     const email = document.querySelector('input[type="email"]').value;
     const password = document.getElementById("secretPassword").value;
-    const data=await fetch("http://localhost:3000/notes/auth/login",{
+    const data=await fetch("https://notes-app-backend-szjm.onrender.com/notes/auth/login",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -291,7 +291,7 @@ async function registerUser() {
     const email = document.querySelector('input[type="email"]').value;
     const password = document.getElementById("secretPassword").value;
 
-    const data=await fetch("http://localhost:3000/notes/auth/register",{
+    const data=await fetch("https://notes-app-backend-szjm.onrender.com/notes/auth/register",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
